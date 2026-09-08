@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-[#030712] text-white">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TellMAX.AI — Sovereign Operations Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        cisco: {
+                            cyan: '#00bceb',
+                            blue: '#0d274d',
+                            green: '#6abf4b'
+                        },
+                        dark: {
+                            900: '#030712',
+                            800: '#111827',
+                            border: 'rgba(255,255,255,0.08)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .grid-bg {
+            background-image: 
+                radial-gradient(circle at 50% 30%, rgba(0, 188, 235, 0.15) 0%, transparent 60%),
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+        }
+    </style>
+</head>
+<body class="grid-bg min-h-screen font-sans antialiased flex flex-col justify-between selection:bg-cisco-cyan selection:text-black">
+
+    <!-- NAVBAR -->
+    <header class="w-full border-b border-white/10 backdrop-blur-xl bg-black/40 fixed top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-xl bg-cisco-cyan/10 border border-cisco-cyan/40 flex items-center justify-center text-cisco-cyan font-bold font-display shadow-[0_0_15px_rgba(0,188,235,0.3)]">
+                    <i class="fa-solid fa-microchip text-base"></i>
+                </div>
+                <span class="font-display font-extrabold text-2xl tracking-wide text-white">TellMAX<span class="text-cisco-cyan">.AI</span></span>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="mailto:info@kiw.one?subject=TellMAX.AI%20Inquiry" class="px-5 py-2.5 rounded-full text-xs font-semibold bg-cisco-cyan hover:bg-cisco-cyan/90 text-black transition-all shadow-[0_0_20px_rgba(0,188,235,0.4)] flex items-center space-x-2">
+                    <span>Contact Us</span>
+                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main class="flex-1 flex items-center justify-center pt-36 pb-20 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-cisco-cyan/10 border border-cisco-cyan/30 text-cisco-cyan text-xs font-mono font-medium mb-8 backdrop-blur-md">
+                <span class="w-2 h-2 rounded-full bg-cisco-cyan animate-pulse"></span>
+                <span>SOVEREIGN OPERATIONS ASSISTANT</span>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold tracking-tight text-white mb-6 leading-tight">
+                Infrastructure Intelligence, <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cisco-cyan via-blue-400 to-indigo-500">Driven by Natural Language</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+                TellMAX.AI unifies enterprise operations through secure, sovereign AI—bringing natural language intelligence to complex critical infrastructure.
+            </p>
+
+            <!-- PILLARS GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left max-w-4xl mx-auto mt-8">
+                
+                <div class="bg-black/50 border border-white/10 rounded-2xl p-6 backdrop-blur-xl hover:border-cisco-cyan/40 transition-all group">
+                    <div class="w-10 h-10 rounded-xl bg-cisco-cyan/10 border border-cisco-cyan/30 flex items-center justify-center text-cisco-cyan mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shield-halved text-lg"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-white mb-2">Data Sovereignty</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        On-premise reasoning pipeline ensuring complete data privacy for critical operations.
+                    </p>
+                </div>
+
+                <div class="bg-black/50 border border-white/10 rounded-2xl p-6 backdrop-blur-xl hover:border-cisco-cyan/40 transition-all group">
+                    <div class="w-10 h-10 rounded-xl bg-cisco-cyan/10 border border-cisco-cyan/30 flex items-center justify-center text-cisco-cyan mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bolt text-lg"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-white mb-2">Automated Remediation</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Streamlined operational triage and closed-loop execution across enterprise systems.
+                    </p>
+                </div>
+
+                <div class="bg-black/50 border border-white/10 rounded-2xl p-6 backdrop-blur-xl hover:border-cisco-cyan/40 transition-all group">
+                    <div class="w-10 h-10 rounded-xl bg-cisco-cyan/10 border border-cisco-cyan/30 flex items-center justify-center text-cisco-cyan mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-comments text-lg"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-white mb-2">Conversational Ops</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Intuitive natural language interface integrated into daily operational workflows.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full border-t border-white/10 py-8 px-6 bg-black/60 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+            <div class="flex items-center space-x-2">
+                <span class="font-display font-bold text-gray-300">TellMAX.AI</span>
+                <span>© 2026 KIW. All rights reserved.</span>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <a href="mailto:info@kiw.one" class="hover:text-cisco-cyan transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
