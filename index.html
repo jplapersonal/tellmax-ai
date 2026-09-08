@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TellMAX.AI — Sovereign Operations Assistant</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
@@ -34,10 +34,13 @@
     <style>
         .grid-bg {
             background-image: 
-                radial-gradient(circle at 50% 30%, rgba(0, 188, 235, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 50% 20%, rgba(0, 188, 235, 0.15) 0%, transparent 60%),
                 linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 100% 100%, 40px 40px, 40px 40px;
+        }
+        .glow-cyan {
+            box-shadow: 0 0 35px rgba(0, 188, 235, 0.2), inset 0 0 15px rgba(0, 188, 235, 0.1);
         }
     </style>
 </head>
@@ -45,17 +48,23 @@
 
     <!-- NAVBAR -->
     <header class="w-full border-b border-white/10 backdrop-blur-xl bg-black/40 fixed top-0 z-50">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-9 h-9 rounded-xl bg-cisco-cyan/10 border border-cisco-cyan/40 flex items-center justify-center text-cisco-cyan font-bold font-display shadow-[0_0_15px_rgba(0,188,235,0.3)]">
-                    <i class="fa-solid fa-microchip text-base"></i>
+                <div class="w-10 h-10 rounded-xl bg-cisco-cyan/10 border border-cisco-cyan/40 flex items-center justify-center text-cisco-cyan font-bold font-display shadow-[0_0_20px_rgba(0,188,235,0.3)]">
+                    <i class="fa-solid fa-brain text-lg"></i>
                 </div>
                 <span class="font-display font-extrabold text-2xl tracking-wide text-white">TellMAX<span class="text-cisco-cyan">.AI</span></span>
             </div>
 
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400">
+                <a href="#vision" class="hover:text-white transition-colors">Vision</a>
+                <a href="#pillars" class="hover:text-white transition-colors">Breakthroughs</a>
+                <a href="#verticals" class="hover:text-white transition-colors">Industries</a>
+            </div>
+
             <div class="flex items-center space-x-4">
-                <a href="mailto:info@kiw.one?subject=TellMAX.AI%20Inquiry" class="px-5 py-2.5 rounded-full text-xs font-semibold bg-cisco-cyan hover:bg-cisco-cyan/90 text-black transition-all shadow-[0_0_20px_rgba(0,188,235,0.4)] flex items-center space-x-2">
-                    <span>Contact Us</span>
+                <a href="mailto:info@kiw.one?subject=TellMAX.AI%20Private%20Demo%20Inquiry" class="px-5 py-2.5 rounded-full text-xs font-semibold bg-cisco-cyan hover:bg-cisco-cyan/90 text-black transition-all shadow-[0_0_20px_rgba(0,188,235,0.4)] flex items-center space-x-2">
+                    <span>Request Private Demo</span>
                     <i class="fa-solid fa-arrow-right text-[10px]"></i>
                 </a>
             </div>
@@ -63,71 +72,159 @@
     </header>
 
     <!-- HERO SECTION -->
-    <main class="flex-1 flex items-center justify-center pt-36 pb-20 px-6 relative z-10">
-        <div class="max-w-4xl mx-auto text-center">
+    <main class="flex-1 pt-36 pb-24 px-6 relative z-10">
+        <div class="max-w-5xl mx-auto text-center">
             
             <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-cisco-cyan/10 border border-cisco-cyan/30 text-cisco-cyan text-xs font-mono font-medium mb-8 backdrop-blur-md">
                 <span class="w-2 h-2 rounded-full bg-cisco-cyan animate-pulse"></span>
                 <span>SOVEREIGN OPERATIONS ASSISTANT</span>
             </div>
 
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold tracking-tight text-white mb-6 leading-tight">
-                Infrastructure Intelligence, <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cisco-cyan via-blue-400 to-indigo-500">Driven by Natural Language</span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
+                The Frontal Lobe for <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cisco-cyan via-blue-400 to-indigo-500">Enterprise Observability & IT/OT</span>
             </h1>
 
-            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-                TellMAX.AI unifies enterprise operations through secure, sovereign AI—bringing natural language intelligence to complex critical infrastructure.
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+                Instead of navigating dozens of complex dashboards, operators simply <strong class="text-white font-semibold">tell MAX</strong> what they need in plain language. MAX autonomously cross-references multi-vendor telemetry, isolates root causes, and executes <strong class="text-cisco-cyan font-semibold">closed-loop fixes in under 5 seconds</strong>—with 100% on-premise data sovereignty.
             </p>
 
-            <!-- PILLARS GRID -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left max-w-4xl mx-auto mt-8">
-                
-                <div class="bg-black/50 border border-white/10 rounded-2xl p-6 backdrop-blur-xl hover:border-cisco-cyan/40 transition-all group">
-                    <div class="w-10 h-10 rounded-xl bg-cisco-cyan/10 border border-cisco-cyan/30 flex items-center justify-center text-cisco-cyan mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-shield-halved text-lg"></i>
+            <!-- STATS HIGHLIGHT BAR -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-16 bg-black/60 backdrop-blur-xl border border-white/10 p-4 rounded-2xl">
+                <div class="p-3 text-center border-b md:border-b-0 md:border-r border-white/10">
+                    <span class="block font-display font-extrabold text-3xl text-cisco-cyan">&lt; 5 sec</span>
+                    <span class="text-xs text-gray-400 font-mono">Closed-Loop Resolution</span>
+                </div>
+                <div class="p-3 text-center border-b md:border-b-0 md:border-r border-white/10">
+                    <span class="block font-display font-extrabold text-3xl text-cisco-green">-85%</span>
+                    <span class="text-xs text-gray-400 font-mono">Mean Time To Resolution</span>
+                </div>
+                <div class="p-3 text-center">
+                    <span class="block font-display font-extrabold text-3xl text-white">100%</span>
+                    <span class="text-xs text-gray-400 font-mono">On-Premise Data Privacy</span>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE HUD INTERFACE MOCKUP PREVIEW -->
+            <div id="vision" class="max-w-4xl mx-auto bg-black/80 border border-cisco-cyan/30 rounded-2xl p-6 glow-cyan backdrop-blur-2xl text-left relative overflow-hidden mb-24">
+                <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+                    <div class="flex items-center space-x-3">
+                        <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                        <span class="font-mono text-xs text-gray-400 ml-2">TellMAX.AI Sovereign Engine Stream</span>
                     </div>
-                    <h3 class="font-display font-bold text-lg text-white mb-2">Data Sovereignty</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed">
-                        On-premise reasoning pipeline ensuring complete data privacy for critical operations.
+                    <span class="font-mono text-[11px] text-cisco-cyan bg-cisco-cyan/10 px-2.5 py-1 rounded-md border border-cisco-cyan/30">STATUS: ACTIVE</span>
+                </div>
+
+                <div class="space-y-4 font-mono text-xs md:text-sm">
+                    <div class="bg-white/5 p-3.5 rounded-xl border border-white/5 text-gray-300">
+                        <span class="text-cisco-cyan font-bold">OPERATOR:</span> "@MAX check room connectivity and environmental anomaly in Block 3."
+                    </div>
+                    <div class="bg-cisco-cyan/10 p-3.5 rounded-xl border border-cisco-cyan/30 text-gray-200">
+                        <span class="text-cisco-cyan font-bold">MAX ASSISTANT:</span> "Analyzed wireless health APIs, BMS thermal sensors, and Splunk telemetry. Switch port 12 lost PoE link. Automatically bouncing port and adjusting BACnet thermostat to 22°C. <strong class="text-cisco-green">[REMEDIATED IN 3.2s]</strong>"
+                    </div>
+                </div>
+            </div>
+
+            <!-- THREE CORE BREAKTHROUGHS -->
+            <div id="pillars" class="mb-24">
+                <h2 class="font-display text-2xl md:text-4xl font-bold text-white mb-4">Three Operational Breakthroughs</h2>
+                <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto mb-12 font-light">
+                    How TellMAX.AI bridges raw infrastructure data and natural operational action.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    
+                    <div class="bg-black/50 border border-white/10 rounded-2xl p-8 backdrop-blur-xl hover:border-cisco-cyan/40 transition-all group relative">
+                        <div class="w-12 h-12 rounded-2xl bg-cisco-cyan/10 border border-cisco-cyan/30 flex items-center justify-center text-cisco-cyan mb-6 group-hover:scale-110 transition-transform text-xl">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-3">1. The Frontal Lobe of Telemetry</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            While observability tools ingest massive telemetry, MAX acts as the reasoning brain—understanding anomalies in human language and resolving incidents where static playbooks fail.
+                        </p>
+                    </div>
+
+                    <div class="bg-black/50 border border-white/10 rounded-2xl p-8 backdrop-blur-xl hover:border-cisco-cyan/40 transition-all group relative">
+                        <div class="w-12 h-12 rounded-2xl bg-cisco-cyan/10 border border-cisco-cyan/30 flex items-center justify-center text-cisco-cyan mb-6 group-hover:scale-110 transition-transform text-xl">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-3">2. 100% On-Premise Sovereignty</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Designed for strict regulated environments. The LLM and RAG document pipeline run entirely locally on dedicated AI compute—zero operational data leaves your building.
+                        </p>
+                    </div>
+
+                    <div class="bg-black/50 border border-white/10 rounded-2xl p-8 backdrop-blur-xl hover:border-cisco-cyan/40 transition-all group relative">
+                        <div class="w-12 h-12 rounded-2xl bg-cisco-cyan/10 border border-cisco-cyan/30 flex items-center justify-center text-cisco-cyan mb-6 group-hover:scale-110 transition-transform text-xl">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-3">3. Partner & MSP Superpowers</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Acts as an always-on L0/L1 digital co-pilot for Managed Service Providers, eliminating alert fatigue, preventing SLA breaches, and boosting contract margins by 25-40%.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- TARGET INDUSTRIES -->
+            <div id="verticals" class="bg-black/40 border border-white/10 rounded-3xl p-10 backdrop-blur-xl text-left">
+                <div class="max-w-2xl mb-8">
+                    <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-2">Built for Complex Critical Infrastructure</h2>
+                    <p class="text-xs md:text-sm text-gray-400">
+                        Proven across demanding multi-site environments where IT and OT systems converge.
                     </p>
                 </div>
 
-                <div class="bg-black/50 border border-white/10 rounded-2xl p-6 backdrop-blur-xl hover:border-cisco-cyan/40 transition-all group">
-                    <div class="w-10 h-10 rounded-xl bg-cisco-cyan/10 border border-cisco-cyan/30 flex items-center justify-center text-cisco-cyan mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-bolt text-lg"></i>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+                    <div class="p-5 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+                        <div class="flex items-center space-x-2 text-cisco-cyan font-bold text-sm">
+                            <i class="fa-solid fa-hotel"></i>
+                            <span>Smart Hospitality & Real Estate</span>
+                        </div>
+                        <p class="text-gray-400 leading-relaxed">
+                            Unifying guest comfort, Wi-Fi, ToIP telephony, room domotics, and PMS integrations for friction-free operations.
+                        </p>
                     </div>
-                    <h3 class="font-display font-bold text-lg text-white mb-2">Automated Remediation</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed">
-                        Streamlined operational triage and closed-loop execution across enterprise systems.
-                    </p>
-                </div>
 
-                <div class="bg-black/50 border border-white/10 rounded-2xl p-6 backdrop-blur-xl hover:border-cisco-cyan/40 transition-all group">
-                    <div class="w-10 h-10 rounded-xl bg-cisco-cyan/10 border border-cisco-cyan/30 flex items-center justify-center text-cisco-cyan mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-comments text-lg"></i>
+                    <div class="p-5 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+                        <div class="flex items-center space-x-2 text-cisco-cyan font-bold text-sm">
+                            <i class="fa-solid fa-hospital"></i>
+                            <span>Healthcare & Clinical Facilities</span>
+                        </div>
+                        <p class="text-gray-400 leading-relaxed">
+                            Proactive IoT environmental monitoring and zero-interruption clinical network resilience.
+                        </p>
                     </div>
-                    <h3 class="font-display font-bold text-lg text-white mb-2">Conversational Ops</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed">
-                        Intuitive natural language interface integrated into daily operational workflows.
-                    </p>
-                </div>
 
+                    <div class="p-5 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+                        <div class="flex items-center space-x-2 text-cisco-cyan font-bold text-sm">
+                            <i class="fa-solid fa-industry"></i>
+                            <span>Industrial & Manufacturing</span>
+                        </div>
+                        <p class="text-gray-400 leading-relaxed">
+                            Eliminating silos between plant operations and enterprise IT to prevent expensive production downtime.
+                        </p>
+                    </div>
+                </div>
             </div>
 
         </div>
     </main>
 
     <!-- FOOTER -->
-    <footer class="w-full border-t border-white/10 py-8 px-6 bg-black/60 backdrop-blur-xl">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-            <div class="flex items-center space-x-2">
-                <span class="font-display font-bold text-gray-300">TellMAX.AI</span>
-                <span>© 2026 KIW. All rights reserved.</span>
+    <footer class="w-full border-t border-white/10 py-10 px-6 bg-black/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+            <div class="flex items-center space-x-3">
+                <span class="font-display font-extrabold text-white text-base">TellMAX<span class="text-cisco-cyan">.AI</span></span>
+                <span class="text-gray-700">•</span>
+                <span>© 2026 KIW. All rights reserved. Sovereign Operations Assistant.</span>
             </div>
             
             <div class="flex items-center space-x-6">
-                <a href="mailto:info@kiw.one" class="hover:text-cisco-cyan transition-colors">Contact</a>
+                <a href="mailto:info@kiw.one" class="hover:text-cisco-cyan transition-colors">Contact Sales</a>
             </div>
         </div>
     </footer>
