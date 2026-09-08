@@ -34,17 +34,20 @@
     <style>
         .grid-bg {
             background-image: 
-                radial-gradient(circle at 50% 20%, rgba(0, 188, 235, 0.15) 0%, transparent 60%),
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+                radial-gradient(circle at 50% 20%, rgba(0, 188, 235, 0.15) 0%, transparent 65%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
             background-size: 100% 100%, 40px 40px, 40px 40px;
         }
         .glow-cyan {
-            box-shadow: 0 0 35px rgba(0, 188, 235, 0.2), inset 0 0 15px rgba(0, 188, 235, 0.1);
+            box-shadow: 0 0 35px rgba(0, 188, 235, 0.25), inset 0 0 15px rgba(0, 188, 235, 0.1);
         }
     </style>
 </head>
-<body class="grid-bg min-h-screen font-sans antialiased flex flex-col justify-between selection:bg-cisco-cyan selection:text-black">
+<body class="grid-bg min-h-screen font-sans antialiased flex flex-col justify-between selection:bg-cisco-cyan selection:text-black relative overflow-x-hidden">
+
+    <!-- CONNECTED DOTS / CONSTELLATION NETWORK ANIMATED CANVAS -->
+    <canvas id="particles-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-50"></canvas>
 
     <!-- NAVBAR -->
     <header class="w-full border-b border-white/10 backdrop-blur-xl bg-black/40 fixed top-0 z-50">
@@ -215,7 +218,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="w-full border-t border-white/10 py-10 px-6 bg-black/80 backdrop-blur-xl">
+    <footer class="w-full border-t border-white/10 py-10 px-6 bg-black/80 backdrop-blur-xl relative z-10">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
             <div class="flex items-center space-x-3">
                 <span class="font-display font-extrabold text-white text-base">TellMAX<span class="text-cisco-cyan">.AI</span></span>
@@ -228,6 +231,71 @@
             </div>
         </div>
     </footer>
+
+    <!-- DYNAMIC CONNECTED DOTS / CONSTELLATION NETWORK SCRIPT -->
+    <script>
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles = [];
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.7;
+                this.vy = (Math.random() - 0.5) * 0.7;
+                this.radius = Math.random() * 2 + 1;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#00bceb';
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = '#00bceb';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 70; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 130) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(0, 188, 235, ${0.35 * (1 - dist / 130)})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 
 </body>
 </html>
